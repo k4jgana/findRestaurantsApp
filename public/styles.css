@@ -59,6 +59,29 @@ header ul li a {
 form {
     margin-bottom: 1rem;
 }
+
+.registerPage{
+    display: flex;
+    align-items: center;
+}
+
+.loginButton{
+    margin: 0.5em 0;
+    padding: .8em 2.2em;
+}
+.inputInfo{
+    margin: 0.5em 0;
+    padding: .8em 2.2em;
+}
+.enter
+{
+    background-color: #dfbc97;
+    box-shadow: 0 2px 3px #333;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
 form > div {
     margin-bottom: 0.5rem;
     color: #333;

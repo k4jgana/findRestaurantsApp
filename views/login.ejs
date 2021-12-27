@@ -8,18 +8,32 @@
     <title>Login</title>
 </head>
 <body>
+    <header>
+        <div class="logo">
+          <img src="/restaurant.png" alt="Logo">
+        </div>
+        <ul>
+          <li>
+            <a href="/about">About Page</a>
+          </li>
+        </ul>
+      </header>
+    <br>
+    <div class="enter">
     <h1>Welcome to FindRestaurants page, please enter to view Restaurants!</h1>
+    <br>
     <form action="/login" method="POST">
         <div>
-            <input type="email" name="email" placeholder="Enter email">
+            <input class="inputInfo" type="email" name="email" placeholder="Enter email">
         </div>
         <div>
-            <input type="password" name="password" placeholder="Enter password">
+            <input class="inputInfo" type="password" name="password" placeholder="Enter password">
        </div>
         <div>
-            <button type="submit">Login</button>
+            <button class="loginButton" type="submit">Login</button>
         </div>
+    </div>
     </form>
-    <a href="/register">Register</a>
+    <span>Don't have an account? register <a href="/register">here</a></span>
 </body>
 </html>

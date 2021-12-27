@@ -124,7 +124,7 @@ app.get('/home',checkAuthenticated, (req,res) => {
     })
 })
 
-app.listen(3000, () => {console.log('app started')})
+app.listen(process.env.PORT || 3000, () => {console.log('app started')})
 
 
 

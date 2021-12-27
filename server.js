@@ -33,7 +33,7 @@ app.use(cors())
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb://localhost:27017/testDB', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://nenad:n160800@cluster0.bikfm.mongodb.net/app_res?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
 .then(console.log('db connected'))
 .catch(err => console.log(err));
 

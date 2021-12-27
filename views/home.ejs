@@ -17,14 +17,9 @@
           padding: 0;
         }
       </style>    
-    <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-
+   
     <!-- styles -->
-    <link rel="stylesheet" href="./styles_home.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
 <body>
 
@@ -33,16 +28,10 @@
 	#map {
 		height: 70%;
 	}
-	html,
-	body {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-	}
 </style>
 
  
-<div class="" id="map"></div>
+<!-- ovde bese -->
 
 
 <script>
@@ -131,63 +120,75 @@
     console.log(home_marker);
 	}
 </script>
+<header>
+  <div class="logo">
+    <img src="/restaurant.png" alt="Logo">
+  </div>
+  <ul>
+    <li>
+        <a href="/logout">Logout</a>
+    </li>
+    <li>
+      <a href="/about">About Us</a>
+    </li>
+  </ul>
+</header>
+<div class="" id="map"></div>
+<br>
+<h3>
+  Click on location to draw distance bewteen home and chosen restaurant, click clear to clear lines
+</h3>
+<br>
 <div>
-  <div>
-    <br>
-      <input class ='category'type="checkbox" id="pizza" name="pizza" value="pizza">
-      <label for="pizza">pizza</label>
-      <input class ='category' type="checkbox" id="meat" name="meat" value="meat">
-      <label for="meat">meat</label>
-      <input class ='category' type="checkbox" id="vegan" name="vegan" value="vegan">
-      <label for="vegan">vegan</label>
-      <input class ='category' type="checkbox" id="mexican" name="mexican" value="mexican">
-      <label for="mexican">mexican</label>
-      <input class ='category' type="checkbox" id="asian" name="asian" value="asian">
-      <label for="asian">asian</label>
-      <button onclick="select()">select</button>
-    </div>
-    <br>
-    <br>
-</div>
-<div>
-  <% restaurants.forEach(restaurant => { %>
-      <div >
-          <li>
-              <%= restaurant.name_en %>
-              <button onclick="takeThere('<%= restaurant.name_en %>')">location</button>
-              <button onclick="window.location.reload();">clear</button>
-              <br>
-              
-              Category: <%= restaurant.category %>
-              <br>
-              
-              <br>
-              <br>
-          </li>
+  <!-- <form>
+      <div>
+        <input class ='category'type="checkbox" id="pizza" name="category" value="pizza">
+        <label for="pizza">pizza</label>
       </div>
-     
-  <% }) %>
+      <div>
+        <input class ='category' type="checkbox" id="meat" name="category" value="meat">
+        <label for="meat">meat</label>
+      </div>
+      <div>
+        <input class ='category' type="checkbox" id="vegan" name="category" value="vegan">
+        <label for="vegan">vegan</label>
+      </div>
+      <div>
+        <input class ='category' type="checkbox" id="mexican" name="category" value="mexican">
+        <label for="mexican">mexican</label>
+        </div>
+      <div>
+        <input class ='category' type="checkbox" id="asian" name="category" value="asian">
+        <label for="asian">asian</label>
+      </div>
+      <div>
+        <button onclick="select()">select</button>
+      </div>
+    </form> -->
 </div>
+<div class="container">
+  <% restaurants.forEach(restaurant => { %>
+      <div class="restaurant-card">
+      <h2><%= restaurant.name_en %></h2>
+      <div>
+        <div>
+          <button onclick="takeThere('<%= restaurant.name_en %>')" class="location">location</button>
+        </div>
+        <div>
+          <div class="category"><span>Category:</span> <%= restaurant.category %></div>
+        </div>      
+      </div>
+      </div>
+  <% }) %>
+  <button onclick="window.location.reload();" class="clear">clear</button>
+</div>
+
 
 
 
 <script>
-
-  
-
     
-    function select(){
-      var checkedValue = []; 
-    var inputElements = document.getElementsByClassName('category');
-    for(var i=0; inputElements[i]; ++i){
-            if(inputElements[i].checked){
-           checkedValue.push (inputElements[i].value);
-          //  break;
-      }
-}
-    console.log(checkedValue)
-  }
-
+    
     
 
    function takeThere(name){
@@ -214,10 +215,23 @@
 
     }
 
+    function select(){
+      var checkedValue = []; 
+    var inputElements = document.getElementsByClassName('category');
+    for(var i=0; inputElements[i]; ++i){
+            if(inputElements[i].checked){
+           checkedValue.push (inputElements[i].value);
+          //  break;
+      }
+}
+    console.log(checkedValue)
+  }
 
-    let restaurani = '<%- str_rest %>'
-    restaurani = JSON.parse(restaurants)
-    console.log(restaurani)
+
+
+    // let restaurani = '<%- str_rest %>'
+    // restaurani = JSON.parse(restaurants)
+    // console.log(restaurani)
     
 </script>
 

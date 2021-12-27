@@ -103,6 +103,15 @@ app.get('/dashboard', checkAuthenticated, (req, res) => {
     res.render('dashboard', { name: req.user.firstName });
 });
 
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/login');
+});
+
+app.get('/about', (req, res) => {
+    res.render('about')
+});
+
 app.post('/logout', (req, res) => {
     req.logout();
     res.redirect('/login');

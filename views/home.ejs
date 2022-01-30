@@ -67,17 +67,12 @@
                 title: '<%= restaurants[i].name_en %>'
             })
 
-            console.log(marker.label)
-            console.log(marker)
-            markers.push(marker)
-            console.log(markers)
-            
+            markers.push(marker)            
             marker.setMap(map)
 
         <% } %>
 
     pathBetween.setMap(map);
-    console.log(home_marker);
 	}
 </script>
 <header>
@@ -142,7 +137,6 @@
     });
 
     path.setMap(map);
-        console.log('ok')
       }
     }
 

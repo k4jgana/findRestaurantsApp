@@ -5,6 +5,14 @@ const RestaurantSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    lat:{
+        type:Number,
+        required:true
+    },   
+    long:{
+        type:Number,
+        required:true
+    },
     category: {
         type: String,
         required: true

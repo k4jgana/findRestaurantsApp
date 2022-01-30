@@ -60,9 +60,8 @@ form {
     margin-bottom: 1rem;
 }
 
-.registerPage{
-    display: flex;
-    align-items: center;
+.registerForm {
+    display: inline-block;
 }
 
 .loginButton{

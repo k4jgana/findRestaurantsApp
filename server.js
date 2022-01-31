@@ -3,7 +3,6 @@ const express = require('express');
 const passport = require('passport');
 const session = require('express-session');
 const User = require('./models/User');
-const cors = require('cors')
 const { checkAuthenticated, checkNotAuthenticated } = require('./auth');
 const Restaurant = require('./models/Restaurant');
 const { json } = require('express');
@@ -26,7 +25,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(cors())
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -74,10 +72,6 @@ app.post('/login',
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/home');
-});
-
-app.get('/dashboard', checkAuthenticated, (req, res) => {
-    res.render('dashboard', { name: req.user.firstName });
 });
 
 app.get('/logout', (req, res) => {
